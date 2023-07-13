@@ -9,7 +9,7 @@ async function searchResult(){
      // fetch movie details from the api
      const response=await fetch(`https://www.omdbapi.com/?apikey=3ca5df7&t=${movie}`,{method:"GET"},);
      const data=await response.json();
-     console.log(data);
+     
     // fetch the movies-container-search element from DOM
     const moviesContainerSearch=document.querySelector(".movies-container-search");
      
@@ -84,8 +84,7 @@ async function showMyMovieList(val){
     const movieList = JSON.parse(localStorage.getItem("movieList")) || [];
     const moviesContainer=document.querySelector("#movies-container");
     
-    // traverse over it and create required elements;
-
+    // traverse over it and create required elements
     
     for(let i=val?movieList.length-1:0;i<movieList.length;i++){
         const card=document.createElement("div");
